@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+
+<style>
+    .box{
+        background-color: rgba(64, 64, 63, 0.23);
+        width: 450px;
+        margin-top: 60px;
+        padding: 10px;
+        border-radius: 10px;
+        margin-left: 500px;
+    }
+    
+    .logbox input{
+        width: 350px;
+        height: 35px;
+        margin-top: 25px;
+        padding-left: 25px;
+        border-radius: 10px;
+        border: 2px solid orangered;
+    }
+    
+    .logbox button{
+        background-color: orangered;
+        color: black;
+        width: 180px;
+        height: 45px;
+        border-radius: 10px;
+        font-size: large;
+        margin-top: 35px;
+        margin-bottom: 30px;
+        border: none;
+        cursor: pointer;
+    }
+    .label input{
+        width: 155px;
+        height: 35px;
+        margin-top: 25px;
+        padding-left: 25px;
+        border-radius: 10px;
+        border: 2px solid orangered;
+        margin-left: 5px;
+        margin-right: 5px;  
+    }
+</style>
+
+<body background="{% static 'images/reg.webp' %}">
+<center>
+    <div class="box">
+        <h2 style="color: orangered" >Register</h2>
+        <form action="{% url 'registerpage' %}" method="post">
+        <div class="label">
+        <input class="label" type="text" placeholder="Firstname" name="fname" >
+        <input class="label" type="text" placeholder="Lastname" name="lname">
+        </div>
+        <div class="logbox" >
+        <input type="text" placeholder="Username" name="uname" required>
+        <br>
+        <input type="text" placeholder="Email" name="email" required>
+        <br>
+        <input type="password" placeholder="Password" name="pswd" required>
+        <br>
+        <input type="password" placeholder="Re-password" name="repswd">
+        <br>
+        <button type="submit">Submit</button>
+        <font color="red">{{message}}</font>
+        </div>
+        </form>
+    </div>
+</center>
+</body>
+</html>
